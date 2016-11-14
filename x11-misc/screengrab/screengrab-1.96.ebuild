@@ -15,14 +15,14 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE="dbus xdg"
 
-DEPEND="
+RDEPEND="
 	dev-qt/qtcore:5
 	dev-qt/qtgui:5
 	x11-libs/libqxt
 	x11-libs/libX11
 	dbus? ( sys-apps/dbus )
 "
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}"
 
 src_prepare() {
 	sed -i -e "/LICENSE.txt/d" CMakeLists.txt || die
