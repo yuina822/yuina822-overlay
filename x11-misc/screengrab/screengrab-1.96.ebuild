@@ -18,7 +18,6 @@ IUSE="dbus xdg"
 RDEPEND="
 	dev-qt/qtcore:5
 	dev-qt/qtgui:5
-	x11-libs/libqxt
 	x11-libs/libX11
 	dbus? ( sys-apps/dbus )
 "
