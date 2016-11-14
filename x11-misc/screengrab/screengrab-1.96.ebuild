@@ -25,7 +25,6 @@ DEPEND="${RDEPEND}"
 
 src_prepare() {
 	sed -i -e "/LICENSE.txt/d" CMakeLists.txt || die
-	rm -r src/3rdparty || die
 
 	cmake-utils_src_prepare
 }
