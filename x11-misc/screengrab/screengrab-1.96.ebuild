@@ -34,7 +34,6 @@ src_prepare() {
 src_configure() {
 	local mycmakeargs=(
 		-DSG_DOCDIR=${PF}
-		-DSG_USE_SYSTEM_QXT=ON
 		-DSG_DBUS_NOTIFY=$(usex dbus)
 		-DSG_XDG_CONFIG_SUPPORT=$(usex xdg)
 	)
