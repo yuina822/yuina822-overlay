@@ -1,0 +1,22 @@
+From c1e18fcbf590932e2b3f9b27a0781d292a5f77a6 Mon Sep 17 00:00:00 2001
+From: Martchus <martchus@gmx.net>
+Date: Fri, 18 Nov 2016 16:41:46 +0100
+Subject: [PATCH] Fix compilation on Cygwin
+
+---
+ conversion/stringconversion.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/conversion/stringconversion.cpp b/conversion/stringconversion.cpp
+index 0511093..b91193d 100644
+--- a/conversion/stringconversion.cpp
++++ b/conversion/stringconversion.cpp
+@@ -85,7 +85,7 @@ class ConversionDescriptor
+                 break;
+             }
+         }
+-        return StringData(outputBuffer, currentOutputOffset - outputBuffer);
++        return StringData(std::unique_ptr<char[], StringDataDeleter>(outputBuffer), currentOutputOffset - outputBuffer);
+     }
+ 
+ private:
